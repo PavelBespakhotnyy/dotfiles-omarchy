@@ -8,7 +8,7 @@ Heavily inspired by [atif-1402](https://github.com/atif-1402) and [saneaspect](h
 
 - **hypr** - Hyprland overrides: keybindings, autostart, look and feel, animations
 - **waybar** - Custom status bar with clock, workspaces, audio, network, bluetooth, language and battery
-- **omarchy** - Omarchy menu extensions: animation switcher, waybar color switcher in the STYLE menu
+- **omarchy** - Omarchy menu extensions: aether blueprint switcher, animation switcher and waybar color switcher in the STYLE menu
 
 ## Preview
 
