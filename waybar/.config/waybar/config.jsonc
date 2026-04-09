@@ -27,8 +27,8 @@
 	// For laptops
 	"battery": {
 		"format": "{icon}  {capacity}%",
-		"format-charging": "{icon}  ⇡{capacity}%",
-		"format-plugged": "{icon}  ⇡{capacity}%",
+		"format-charging": "{icon}  {capacity}%",
+		"format-plugged": "{icon}  {capacity}%",
 		"format-full": "{icon}  100%",
 		"format-icons": ["","","","",""],
 		"tooltip-format": "⇣ {power:0.1f}W  {capacity}%",

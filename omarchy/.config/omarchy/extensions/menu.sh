@@ -5,7 +5,7 @@ show_style_menu() {
   *Background*) show_background_menu ;;
   *Hyprland*) open_in_editor ~/.config/hypr/looknfeel.conf ;;
   *Screensaver*) open_in_editor ~/.config/omarchy/branding/screensaver.txt ;;
-  *Blueprint*) show_blueprints_menu ;;
+  *Blueprints*) show_blueprints_menu ;;
   *Animations*) show_animations_menu ;;
   *"Waybar Colors"*) show_waybar_colors_menu ;;
   *About*) open_in_editor ~/.config/omarchy/branding/about.txt ;;
