@@ -111,3 +111,11 @@
     @define-color accent_yellow #f9e2af;
     @define-color accent_red #f38ba8;
     @define-color accent_teal #94e2d5;
+
+    @define-color accent_blue @on_surface;
+    @define-color accent_green @on_surface;
+    @define-color accent_purple @on_surface;
+    @define-color accent_yellow @on_surface;
+    @define-color accent_red @error;
+    @define-color accent_teal @on_surface;
+    @define-color accent_red @on_surface;

@@ -1,9 +1,0 @@
-@import 'colors.css';
-
-@define-color accent_blue @on_surface;
-@define-color accent_green @on_surface;
-@define-color accent_purple @on_surface;
-@define-color accent_yellow @on_surface;
-@define-color accent_red @error;
-@define-color accent_teal @on_surface;
-@define-color accent_red @on_surface;

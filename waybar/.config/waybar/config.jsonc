@@ -2,7 +2,8 @@
 
 {
     "position": "top",
-    "margin-top": 12,
+    "margin-top": 0,
+	"height": 20,
     "modules-left": ["clock", "hyprland/language", "mpris"],
     "modules-center": [ "hyprland/workspaces", "custom/notification"],
     "modules-right":[
@@ -45,7 +46,23 @@
         "format": "{:%I:%M %p}", // AM PM format
         //"format": "{:%H:%M}",// 24H
         "format-alt": "{:%A | %e %B}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'>{}</span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-forward": "shift_down",
+			"on-click-backward": "shift_up",
+			"on-click-right": "mode"
+		}
     },
 
     "hyprland/language": {
@@ -54,97 +71,31 @@
         "format-ru": "RU"
     },
 
-    "hyprland/workspaces": {
-	    "persistent-workspaces": {"*": [ 1,2,3,4,5,6 ]},
-	    "on-click": "activate",
-	    "format": "{windows}",
-	    "format-window-separator": " ",
-	    "window-rewrite-default": "",
-	    "window-rewrite": {		
-            "class<.*imv*.>": "",
-            "class<.*bambustudio*.>": "󰐫",
-            "class<.*bitwarden*.>": "",
-            "class<.*handbrake*.>": "󰈫",
-            "class<.*stremio*.>": "󱖏",
-            "title<.*waydroid*.>": "",
-            "class<.*grayjay*.>": "󱗆",
-	    	"title<.*amazon.*>": "",
-	    	"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": "",
-	    	"class<zen>": "󰰷",
-	    	"class<waterfox|waterfox-bin>": "",
-	    	"class<microsoft-edge>": "",
-	    	"class<Chromium|Thorium|[Cc]hrome>": "",
-	    	"class<brave-browser>": "🦁",
-	    	"class<tor-browser>": "",
-	    	"class<firefox-developer-edition>": "🦊",
-	    	"class<kitty|konsole>": "",
-	    	"class<kitty-dropterm>": "",
-	    	"class<com.mitchellh.ghostty>": "",
-	    	"class<org.wezfurlong.wezterm>": "",
-            "class<org.omarchy.terminal>": "󰏖",
-	    	"class<[Tt]hunderbird|[Tt]hunderbird-esr>": "",
-	    	"class<eu.betterbird.Betterbird>": "",
-	    	"title<.*gmail.*>": "󰊫",
-	    	"class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": "",
-	    	"class<discord|[Ww]ebcord|Vesktop>": "",
-	    	"title<.*whatsapp.*>": "",
-        "title<.*zapzap.*>": "",
-	    	"title<.*messenger.*>": "",
-	    	"title<.*facebook.*>": " ",
-	    	"title<.*reddit.*>": "",
-	    	"title<.*ChatGPT.*>": "󰚩",
-			"title<.*Claude.*>": "󰚩",
-        "class<.*ChatGPT.*>": "󰚩",
-	    	"title<.*deepseek.*>": "󰚩",
-	    	"title<.*qwen.*>": "󰚩",
-	    	"class<subl>": "󰅳",
-	    	"class<slack>": "",
-	    	"class<mpv>": "",
-	    	"class<celluloid|Zoom>": "",
-	    	"class<Cider>": "󰎆 ",
-	    	"title<.*Picture-in-Picture.*>": "",
-	    	"title<.*youtube.*>": "",
-	    	"class<vlc>": "󰕼",
-	    	"title<.*cmus.*>": "",
-	    	"class<[Ss]potify>": "",
-	    	"class<virt-macodeger>": "",
-	    	"class<.virt-manager-wrapped>": "",
-	    	"class<virtualbox manager>": "💽",
-	    	"title<virtualbox>": "💽",
-	    	"class<remmina>": "🖥️",
-	    	"class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "",
-        "class<dev.zed.Zed>": "󰵁",
-	    	"class<codeblocks>": "󰅩",
-	    	"title<.*github.*>": "",
-	    	"class<mousepad>": "",
-	    	"class<libreoffice-writer>": "",
-	    	"class<libreoffice-startcenter>": " 󰏆",
-	    	"class<libreoffice-calc>": "",
-	    	"title<.*nvim ~.*>": "",
-        "class<org.gnome.Nautilus>": "󰣆",
-	    	"title<.*vim.*>": "",
-	    	"title<.*figma.*>": "",
-	    	"title<.*jira.*>": "",
-	    	"class<jetbrains-idea>": "",
-        "title<*.VSCode.*>": "󰨞",
-        "class<.*code.*>": "󰨞",
-	    	"class<obs|com.obsproject.Studio>": "",
-	    	"class<polkit-gnome-authentication-agent-1>": "󰒃",
-	    	"class<nwg-look>": "",
-	    	"class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
-	    	"class<steam>": "",
-	    	"class<thunar|nemo>": "󰝰",	
-        "class<Gparted>":"",
-	    	"class<gimp>": "",
-	    	"class<emulator>": "📱",
-	    	"class<android-studio>": "",
-       	"class<org.pipewire.Helvum>": "󰓃",
-        "class<localsend>":"",
-        "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
-		"class<org.omarchy.yazi>": "󰇥"
-	    	}
-	    },
-
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"cursor": true,
+		"format": "{icon}",
+		"format-icons": {
+			"default": "",
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"active": "",
+			"empty": ""
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+		}
+	},
+	
     "tray": {
     "icon-size": 21,
     "spacing": 10,
