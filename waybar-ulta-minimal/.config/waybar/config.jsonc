@@ -1,0 +1,200 @@
+// THIS CONFIG IS MOSTLY CONFIG FROM VERY COOL GUY atif-1402
+
+{
+    "position": "top",
+    "margin-top": 0,
+	"height": 24,
+    "modules-left": ["clock", "hyprland/language", "mpris"],
+    "modules-center": [ "hyprland/workspaces", "custom/notification"],
+    "modules-right":[
+        "tray",
+        "pulseaudio",
+        "network",
+		"bluetooth",
+		"battery",
+    ],
+
+
+    //MODULES//
+	"bluetooth": {
+		"format": "󰂯  {num_connections}",
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱 {num_connections}",
+		"tooltip-format": "{num_connections} connected\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "omarchy-launch-bluetooth"
+	},
+
+	// For laptops
+	"battery": {
+		"format": "{icon}  {capacity}%",
+		"format-charging": "{icon}  {capacity}%",
+		"format-plugged": "{icon}  {capacity}%",
+		"format-full": "{icon}  100%",
+		"format-icons": ["","","","",""],
+		"tooltip-format": "⇣ {power:0.1f}W  {capacity}%",
+		"tooltip-format-charging": "⇡ {power:0.1f}W  {capacity}%",
+		"tooltip-format-plugged": "⇡ {power:0.1f}W  {capacity}%",		"interval": 5,
+		"states": {
+			"warning": 30,
+			"critical": 20
+		},
+		    "on-click": "omarchy-menu power",
+	},
+	
+    "clock": {
+        "format": "{:%I:%M %p}", // AM PM format
+        //"format": "{:%H:%M}",// 24H
+        "format-alt": "{:%A | %e %B}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'>{}</span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-forward": "shift_down",
+			"on-click-backward": "shift_up",
+			"on-click-right": "mode"
+		}
+    },
+
+    "hyprland/language": {
+        "format": "  {}",
+        "format-en": "US",
+        "format-ru": "RU"
+    },
+
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"cursor": true,
+		"format": "{icon}",
+		"format-icons": {
+			"default": "",
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"active": "",
+			"empty": ""
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+		}
+	},
+	
+    "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+        "blueman": "bluetooth",
+        "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+     }
+    },
+
+    "pulseaudio": {
+		"format": "{icon}  {volume}",
+		"on-click": "omarchy-launch-audio",
+		"on-click-right": "omarchy-launch-audio",
+		"tooltip-format": "Playing at {volume}%",
+		"scroll-step": 5,
+		"format-muted": "  {volume}",
+		"format-icons": {
+			"default": [
+				"",
+				" ",
+				" "
+			]
+		}
+    },
+
+    "network": {
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format": "{icon} {essid}",
+		"format-wifi": "{icon}  {essid}",
+		"format-ethernet": "󰌘 eth2ernet",
+		"format-disconnected": "󰤮",
+		"tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-disconnected": "Disconnected",
+		"interval": 3,
+		"spacing": 1,
+		"on-click": "omarchy-launch-wifi"
+    },
+
+	// If you have swaync
+//    "custom/notification": {
+//       "tooltip": true,
+//       "format": "<span size='16pt'>{icon}</span>",
+//       "format-icons": {
+//         "notification": "󱅫",
+//         "none": "󰂜",
+//         "dnd-notification": "󰂠",
+//         "dnd-none": "󰪓",
+//         "inhibited-notification": "󰂛",
+//         "inhibited-none": "󰪑",
+//         "dnd-inhibited-notification": "󰂛",
+//         "dnd-inhibited-none": "󰪑"
+//       },
+//       "return-type": "json",
+//       "exec-if": "which swaync-client",
+//       "exec": "swaync-client -swb",
+//       "on-click": "swaync-client -t -sw",
+//       "on-click-right": "swaync-client -d -sw",
+//       "escape": true
+//     },
+
+    "mpris": {
+	    "interval": 10,
+	    "format": "{player_icon} {dynamic}",
+	    "format-paused": "{status_icon}  {artist}",
+	    "on-click-middle": "playerctl play-pause",
+	    "on-click": "playerctl previous",
+	    "on-click-right": "playerctl next",
+	    "scroll-step": 5.0,
+	    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
+	    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
+	    "smooth-scrolling-threshold": 1,
+	    "tooltip": true,
+	    "tooltip-format": "{status_icon} {title}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+	    "player-icons": {
+	    	"chromium": "",
+	    	"default": "",
+	    	"firefox": "",
+	    	"kdeconnect": "",
+	    	"mopidy": "",
+	    	"mpv": "󰐹",
+	    	"spotify": "󰎆",
+	    	"vlc": "󰕼",
+	    },
+	    "status-icons": {
+	    	"paused": "",
+	    	"playing": "",
+	    	"stopped": "",
+	    },
+	    "dynamic-order": ["artist"],
+	    "ignored-players": [ "zen"],
+	    "max-length": 25,
+    },
+
+	// "custom/screenrecording-indicator": {
+	// 	"format": "",
+    //     "on-click": "kitty --title=Recorder sh -c '~/.config/hypr/scripts/screenrec.sh'",
+    //     "signal": 8,
+	// 	"tooltip": false,
+    //     "return-type": "json"
+  	// },
+}

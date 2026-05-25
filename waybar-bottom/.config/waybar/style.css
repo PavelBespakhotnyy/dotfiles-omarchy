@@ -1,0 +1,82 @@
+@import '/home/pavel/.config/omarchy/current/theme/waybar.css';
+@import 'colors.css';
+ 
+/* Fits if you have "wooden" theme, otherwise remove the line below */
+@define-color background @surface;
+ 
+/* All */
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 400;
+    font-size: medium;
+    padding: 0;
+    margin: 0;
+}
+ 
+window#waybar {
+    background: @window-bg;
+}
+ 
+/* Pretty elements */
+#custom-sep {
+    color: @muted;
+}
+ 
+#custom-left-bracket,
+#custom-right-bracket {
+    color: @muted;
+    padding: 0 8px 0 8px;
+}
+ 
+#custom-tux {
+    margin-right: 12px;
+}
+ 
+/* Tooltip */
+tooltip {
+    background: @background;
+    border-radius: 6px;
+}
+ 
+tooltip label{
+    color: @foreground;
+    padding: 6px;
+}
+ 
+/* Workspaces */
+#workspaces button { 
+    padding: 0px 16px;
+    color: @foreground;
+    border-radius: 0px;
+    transition: all 150ms ease-in-out;
+}
+ 
+#workspaces button.active { 
+    background-color: @workspace-active;
+    color: @foreground;
+    border-radius: 0px;
+    transition: all 150ms ease-in-out;
+}
+ 
+#workspaces button:hover {
+    background-color: @workspace-hover;
+    color: @foreground;
+    border-radius: 0px;
+}
+ 
+#workspaces button.urgent {
+    color: @urgent;
+}
+ 
+#workspaces button.empty {
+    color: @workspace-hover;
+}
+ 
+/* Padding for right module elements */
+#language,
+#pulseaudio,
+#network,
+#tray {
+    padding: 0 14px 0 6px;
+}

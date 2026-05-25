@@ -1,0 +1,6 @@
+@define-color window-bg      #191411;
+@define-color surface        #181310;
+@define-color muted          #444444;
+@define-color workspace-active #333333;
+@define-color workspace-hover  #555555;
+@define-color urgent         #ff0000;

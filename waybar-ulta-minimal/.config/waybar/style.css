@@ -1,0 +1,106 @@
+@import 'colors.css';
+
+/* ===== Compatibility aliases ===== */
+@define-color bg0 @background;
+@define-color bg1 @surface_container;
+@define-color bg3 @surface_variant;
+@define-color bg4 @surface_container_high;
+@define-color fg @on_surface;
+@define-color red @error;
+
+* {
+    border: none;
+    font-size: 16px;
+    border-radius: 0;
+    font-family: "Adwaita Sans", "JetBrainsMono Nerd Font Propo";
+    font-weight: bold;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: #000000;
+}
+
+tooltip {
+    background: @bg0;
+    border: 1px solid @bg3;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 6px;
+}
+
+#workspaces {
+    padding: 0 8px;
+    margin: 0;
+    background: transparent;
+}
+
+#workspaces button {
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 99px;
+    margin: 0 6px;
+}
+
+#workspaces button.active {
+    min-height: 6px;
+    border-radius: 99px;
+    margin: 0 6px;
+    padding: 0;
+    color: @fg;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+#workspaces button.empty {
+    opacity: 0.3;
+}
+
+#clock,
+#custom-apps,
+#mpris,
+#tray,
+#pulseaudio,
+#custom-notification,
+#bluetooth,
+#battery,
+#network,
+#language,
+#custom-screenrecording-indicator {
+    background: transparent;
+    padding: 0 8px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+
+#clock {
+    margin: 0;
+    padding: 0 0 0 8px;
+}
+
+#language {
+    padding: 0 8px 0 0;
+}
+
+#custom-screenrecording-indicator.active {
+    color: @red;
+}
+
+#clock      { color: @accent_blue; margin: 0 8px; }
+#pulseaudio { color: @accent_purple; }
+#network    { color: @accent_blue; }
+#bluetooth  { color: @accent_teal; }
+#battery    { color: @accent_green; margin-right: 8px; }
+#language   { color: @accent_red; }
+#mpris      { color: @accent_purple; }
+
+#battery.warning  { color: @yellow; }
+#battery.critical { color: @red; }

@@ -1,0 +1,142 @@
+{
+	"position": "bottom",
+    "margin-top": 0,
+	"height": 26,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [
+		"custom/left-bracket", 
+		"clock", 
+		"custom/right-bracket", 
+		"custom/notification"
+	],
+    "modules-right":[
+        "tray",
+		"custom/sep",
+		"hyprland/language",
+		"custom/sep",
+        "pulseaudio",
+		"custom/sep",
+        "network",
+		"custom/tux"
+		//"custom/sep",
+		//"bluetooth",
+		//"custom/sep",
+		//"battery"
+    ],
+
+	// Separators to make it pretty
+	"custom/sep": {
+		"format": "/",
+		"tooltip": false
+	},
+
+	"custom/left-bracket": {
+		"format": "[",
+		"tooltip": false
+	},
+
+	"custom/right-bracket": {
+		"format": "]",
+		"tooltip": false
+	},
+
+	"custom/tux": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "omarchy-menu"
+	},
+
+    // Modules
+	"bluetooth": {
+		"format": "bt: <span color='#777777'>{num_connections}</span>",		
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱 {num_connections}",
+		"tooltip-format": "{num_connections} connected\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "omarchy-launch-bluetooth"
+	},
+
+	// Laptop
+	"battery": {
+		"format": 		   "bat: <span color='#777777'>{capacity}%</span>",
+		"format-charging": "bat: <span color='#777777'>{capacity}%</span>",
+		"format-plugged":  "bat: <span color='#777777'>{capacity}%</span>",
+		"format-full":     "bat: 100%",
+		"tooltip-format": "⇣ {power:0.1f}W  {capacity}%",
+		"tooltip-format-charging": "⇡ {power:0.1f}W  {capacity}%",
+		"tooltip-format-plugged": "⇡ {power:0.1f}W  {capacity}%",
+		"interval": 5,
+		"states": {
+			"warning": 30,
+			"critical": 20
+		},
+		    "on-click": "omarchy-menu power"
+	},
+
+	"clock": {
+		"format": "{:%H:%M %A, %B %d}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffffff'><b>{}</b></span>",
+				"days": "<span color='#cccccc'>{}</span>",
+				"weekdays": "<span color='#888888'>{}</span>",
+				"today": "<span color='#ffffff'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+
+	"hyprland/language": {
+        "format": "lang: <span color='#777777'>{}</span>",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+
+	"hyprland/workspaces": {
+		"persistent-workspaces": {"*": [ 1,2,3,4,5 ]},
+		"on-click": "activate",
+		"format": "{name}"
+	},
+
+	// FIX LATER ---------------------------------------------------------------
+	"tray": {
+    "icon-size": 16,
+    "spacing": 16,
+    "icons": {
+			"blueman": "bluetooth",
+			"TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+		}
+    },
+
+	"pulseaudio": {
+		"format": "vol: <span color='#777777'>{volume}</span>",
+		"on-click": "omarchy-launch-audio",
+		"on-click-right": "omarchy-launch-audio",
+		"tooltip-format": "Playing at {volume}%",
+		"scroll-step": 5,
+		"format-muted": "vol: {volume}",
+		"format-icons": {
+			"default": [
+				"",
+				" ",
+				" "
+			]
+		}
+    },
+
+	"network": {
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format": "net: <span color='#777777'>{essid}</span>",
+		"format-wifi": "net: <span color='#777777'>{essid}</span>",
+		"format-ethernet": "net: <span color='#777777'>ethernet</span>",
+		"format-disconnected": "󰤮",
+		"tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-disconnected": "Disconnected",
+		"interval": 3,
+		"spacing": 1,
+		"on-click": "omarchy-launch-wifi"
+    }
+}
