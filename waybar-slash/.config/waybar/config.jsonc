@@ -17,11 +17,11 @@
         "pulseaudio",
 		"custom/sep",
         "network",
-		"custom/tux"
-		//"custom/sep",
-		//"bluetooth",
-		//"custom/sep",
-		//"battery"
+		"custom/sep",
+		"bluetooth",
+		"custom/sep",
+		"battery",
+		"custom/tux",
     ],
 
 	// Separators to make it pretty
@@ -58,10 +58,10 @@
 
 	// Laptop
 	"battery": {
-		"format": 		   "bat: <span color='#777777'>{capacity}%</span>",
-		"format-charging": "bat: <span color='#777777'>{capacity}%</span>",
-		"format-plugged":  "bat: <span color='#777777'>{capacity}%</span>",
-		"format-full":     "bat: 100%",
+		"format": 		   "bat: <span color='#777777'>{capacity}</span>",
+		"format-charging": "bat: <span color='#777777'>{capacity}</span>",
+		"format-plugged":  "bat: <span color='#777777'>{capacity}</span>",
+		"format-full":     "bat: <span color='#777777'>100</span>",
 		"tooltip-format": "⇣ {power:0.1f}W  {capacity}%",
 		"tooltip-format-charging": "⇡ {power:0.1f}W  {capacity}%",
 		"tooltip-format-plugged": "⇡ {power:0.1f}W  {capacity}%",
@@ -100,7 +100,6 @@
 		"format": "{name}"
 	},
 
-	// FIX LATER ---------------------------------------------------------------
 	"tray": {
     "icon-size": 16,
     "spacing": 16,
@@ -116,7 +115,7 @@
 		"on-click-right": "omarchy-launch-audio",
 		"tooltip-format": "Playing at {volume}%",
 		"scroll-step": 5,
-		"format-muted": "vol: {volume}",
+		"format-muted": "vol: <span color='#777777'>{volume}</span>",
 		"format-icons": {
 			"default": [
 				"",

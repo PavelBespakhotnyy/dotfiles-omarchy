@@ -6,17 +6,17 @@ Personal dotfiles managed with GNU Stow.
 
 ## Waybar variants
 
-**pills**
+**waybar-pills**
 ![waybar-pills](./waybar-pills/.config/waybar/preview_waybar-pills.png)
 
-**pills**(black and white colors) (to make it black and white colors uncomment last lines in colors.css)
+**waybar-pills**(black and white colors) (to make it black and white colors uncomment last lines in colors.css)
 ![waybar-pills](./waybar-pills/.config/waybar/preview_waybar-pills-ink.png)
 
 
-**bottom**
-![waybar-bottom](./waybar-bottom/.config/waybar/preview_waybar-bottom.png)
+**waybar-slash**
+![waybar-bottom](./waybar-slash/.config/waybar/preview_waybar-bottom.png)
 
-**ulta-minimal**
+**waybar-ulta-minimal**
 ![waybar-ulta-minimal](./waybar-ulta-minimal/.config/waybar/preview_waybar-ultra-minimal.png)
 
 ## Structure
